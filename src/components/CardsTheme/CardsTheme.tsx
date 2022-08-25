@@ -1,4 +1,4 @@
-// import { Container } from './style';
+import './style.css';
 
 import { useState } from 'react';
 import { cardsPokemons, cardsSeries } from '../../data/cards';
@@ -19,28 +19,43 @@ function CardsTheme() {
   };
 
   return (
-    <div>
-      <div>
-        <h1>Jogo da Memoria</h1>
-        <h2>Escolha um tema para jogar</h2>
-        <button onClick={() => handleToggleCardsSeries()}>Series</button>
-        <button onClick={() => handleToggleCardsPokemons()}>Pokémons</button>
+    <section>
+      <div className="content-box">
+        <h1 className="content-box__title">✨ Jogo da Memória ✨</h1>
+        <h2 className="content-box__subtitle">Escolha um tema para jogar</h2>
+
+        <div className="group-buttons">
+          <button
+            onClick={() => handleToggleCardsSeries()}
+            type="button"
+            className="button button--series"
+          >
+            Séries
+          </button>
+          <button
+            onClick={() => handleToggleCardsPokemons()}
+            type="button"
+            className="button button--pokemons"
+          >
+            Pokémons
+          </button>
+        </div>
       </div>
 
       {isCardSeries && (
         <div className="container">
-          <h2>Tema - Series</h2>
+          <p className="container__theme">Tema - Séries</p>
           <Grid cards={cardsSeries} />
         </div>
       )}
 
       {isCardPokemons && (
         <div className="container">
-          <h2>Tema - Pokemons</h2>
+          <p className="container__theme">Tema - Pokémons</p>
           <Grid cards={cardsPokemons} />
         </div>
       )}
-    </div>
+    </section>
   );
 }
 
