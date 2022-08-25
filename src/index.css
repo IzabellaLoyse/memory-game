@@ -4,10 +4,15 @@
   --color-secondary: #131212;
   --color-text: #ffffff;
   --color-text-dark: #0e0909;
+
   --color-series: #e42d58;
   --color-series-hover: #ec1d4d;
+
   --color-pokemons: #2ccde2;
   --color-pokemons-hover: #0ed5f0;
+
+  --color-reset: #38f08b;
+  --color-reset-hover: #1beb78;
 }
 
 * {

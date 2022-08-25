@@ -1,5 +1,21 @@
+.container-grid {
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+}
+
+.button--reset {
+  background-color: var(--color-reset);
+}
+
+.button--reset:hover {
+  background-color: var(--color-reset-hover);
 }
