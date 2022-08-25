@@ -1,12 +1,7 @@
-body {
-  display: grid;
-  place-items: center;
-}
-
 .card__content {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 108%;
+  aspect-ratio: 1/1;
   transform-style: preserve-3d;
   transition: transform 600ms ease-in-out;
 }
@@ -24,6 +19,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 8rem;
+  cursor: pointer;
 }
 
 .card__face--front {
@@ -33,4 +29,10 @@ body {
 .card__face--back {
   background-color: var(--color-secondary);
   transform: rotateY(180deg);
+}
+
+.card__face--back img {
+  max-width: 100%;
+  width: 10rem;
+  height: auto;
 }

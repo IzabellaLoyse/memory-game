@@ -1,9 +1,10 @@
-import Card from '../../components/Card/Card';
+import CardsTheme from '../../components/CardsTheme/CardsTheme';
+import './style.css';
 
 function App() {
   return (
     <>
-      <Card id="1" cardBack="iza" flipped={true} />
+      <CardsTheme />
     </>
   );
 }

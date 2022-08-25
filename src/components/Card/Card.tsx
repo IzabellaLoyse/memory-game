@@ -13,7 +13,9 @@ function Card({ flipped = false, cardBack, handleClick, id }: ICardProps) {
     <article className="card" onClick={() => handleClickCard(id)}>
       <div className={cardContentClassNames.join(' ')}>
         <div className="card__face card__face--front">?</div>
-        <div className="card__face card__face--back">{cardBack}</div>
+        <div className="card__face card__face--back">
+          <img src={cardBack} alt="Imagem do card" />
+        </div>
       </div>
     </article>
   );
