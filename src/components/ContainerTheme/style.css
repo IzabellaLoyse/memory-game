@@ -1,0 +1,11 @@
+.container {
+  padding-top: 3rem;
+}
+
+.container__theme {
+  text-align: center;
+  padding-bottom: 0.8rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}

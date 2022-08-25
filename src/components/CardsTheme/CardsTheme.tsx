@@ -2,20 +2,13 @@ import './style.css';
 
 import { useState } from 'react';
 import { cardsPokemons, cardsSeries } from '../../data/cards';
-import Grid from '../Grid/Grid';
+import ContainerTheme from '../ContainerTheme/ContainerTheme';
 
 function CardsTheme() {
-  const [isCardSeries, setIsCardSeries] = useState(false);
-  const [isCardPokemons, setIsCardPokemons] = useState(false);
+  const [selectTheme, setSelectTheme] = useState('series');
 
-  const handleToggleCardsSeries = () => {
-    setIsCardSeries(true);
-    setIsCardPokemons(false);
-  };
-
-  const handleToggleCardsPokemons = () => {
-    setIsCardPokemons(true);
-    setIsCardSeries(false);
+  const handleToggleThemeCards = (theme: string) => {
+    setSelectTheme(theme);
   };
 
   return (
@@ -26,14 +19,14 @@ function CardsTheme() {
 
         <div className="group-buttons">
           <button
-            onClick={() => handleToggleCardsSeries()}
+            onClick={() => handleToggleThemeCards('series')}
             type="button"
             className="button button--series"
           >
             Séries
           </button>
           <button
-            onClick={() => handleToggleCardsPokemons()}
+            onClick={() => handleToggleThemeCards('pokemons')}
             type="button"
             className="button button--pokemons"
           >
@@ -42,18 +35,12 @@ function CardsTheme() {
         </div>
       </div>
 
-      {isCardSeries && (
-        <div className="container">
-          <p className="container__theme">Tema - Séries</p>
-          <Grid cards={cardsSeries} />
-        </div>
+      {selectTheme === 'series' && (
+        <ContainerTheme theme={cardsSeries} title="Séries" />
       )}
 
-      {isCardPokemons && (
-        <div className="container">
-          <p className="container__theme">Tema - Pokémons</p>
-          <Grid cards={cardsPokemons} />
-        </div>
+      {selectTheme === 'pokemons' && (
+        <ContainerTheme theme={cardsPokemons} title="Pokémons" />
       )}
     </section>
   );
